@@ -10,7 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by Henly Harrold on 11/21/20.
-//
+#include "ZombieEvent.hpp"
+
+ZombieEvent::ZombieEvent() {
+	setZombieType(DEFAULT_TYPE);
+	return;
+}
+
+ZombieEvent::~ZombieEvent() {
+	return;
+}
+Zombie* ZombieEvent::newZombie(std::string name) {
+	Zombie* zombie;
+	zombie = new Zombie(name, type);
+	return zombie;
+}
+
+void ZombieEvent::setZombieType(std::string newType) {
+	type = newType;
+}
 
