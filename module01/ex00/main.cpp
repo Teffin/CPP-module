@@ -12,12 +12,21 @@
 
 #include "Pony.hpp"
 
+void pony_on_stack() {
+	Pony pony("Karlen");
+	pony.make_it_do_some_stuff();
+}
+
+void pony_on_heap() {
+	Pony *pony;
+	pony = new Pony("Sarah");
+	pony->make_it_do_some_stuff();
+	delete pony;
+}
+
 int main( void )
 {
-	Pony pony_on_stack();
-	Pony *pony_on_heap;
-
-	pony_on_heap = new Pony();
-
+	pony_on_stack();
+	pony_on_heap();
 }
 

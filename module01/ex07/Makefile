@@ -16,7 +16,7 @@ _DEPS =
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o File.class.o
+_OBJ = main.o File.o
 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 

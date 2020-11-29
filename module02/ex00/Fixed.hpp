@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   File.class.hpp                                     :+:      :+:    :+:   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hharrold <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 14:34:32 by hharrold          #+#    #+#             */
-/*   Updated: 2020/11/27 14:34:33 by hharrold         ###   ########.fr       */
+/*   Created: 2020/11/26 19:17:09 by hharrold          #+#    #+#             */
+/*   Updated: 2020/11/26 19:17:11 by hharrold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_CLASS_H
-# define FILE_CLASS_H
-# define ERROR_FILE_DO_EXIST_MESSAGE(X) X + " File is exist re-write him? Y/N"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 # include <iostream>
-# include <fstream>
 
-class File {
+class Fixed {
 private:
-	std::string replaceable;
-	std::string replacing;
+	int fixedPointValue;
+	static const int litteral = 8;
 public:
-	File(std::string newReplaceable, std::string newReplacing);
-	~File();
-	void WriteToFile(std::ifstream &file, std::ofstream &newFile);
-	bool FileForWrite(std::string fileName);
-	bool CheckFileExist(std::string fileName);
-	bool IsRewritingFile();
+	Fixed( void );
+	~Fixed( void );
+	Fixed( Fixed const &src);
+	Fixed & operator=( Fixed const & rhs);
+	int getRawBits( void ) const;
+	void setRawBits(int const raw);
+	void setLitteral(const int value);
 };
 
 #endif

@@ -12,8 +12,6 @@
 
 #include "Zombie.hpp"
 
-
-
 void	Zombie::printHeader() {
 	std::cout << "<" << name << "(" << type << ")" << ">" << " ";
 }

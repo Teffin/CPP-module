@@ -12,21 +12,15 @@
 
 #ifndef PONY_HPP
 # define PONY_HPP
-
+# include <iostream>
 class Pony
 {
 private:
-	int		color;
-	int 	weight;
-	int 	height;
-	bool 	horn;
-	bool 	male;
+	std::string	name;
 
 public:
-	Pony( void );
+	Pony( std::string newName );
 	~Pony( void );
-	void ponyOnTheStack();
-	void ponyOnTheHeap();
 	void make_it_do_some_stuff( void );
 };
 

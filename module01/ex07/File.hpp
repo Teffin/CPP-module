@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   File.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hharrold <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/21 13:51:03 by hharrold          #+#    #+#             */
-/*   Updated: 2020/11/21 13:51:04 by hharrold         ###   ########.fr       */
+/*   Created: 2020/11/27 14:34:32 by hharrold          #+#    #+#             */
+/*   Updated: 2020/11/27 14:34:33 by hharrold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# define SOUND_BORN "Braiiiiiiinnnssss..."
-# define SOUND_DEAD "Raaugghh"
+#ifndef FILE_H
+# define FILE_H
+# define ERROR_FILE_DO_EXIST_MESSAGE(X) X + " File is exist re-write him? Y/N"
 # include <iostream>
+# include <fstream>
 
-typedef enum e_live {
-	dead = 0,
-	born = 1
-}			t_live;
-
-class Zombie
-{
+class File {
 private:
-	std::string type;
-	std::string name;
-	t_live live;
-	void	printHeader();
+	std::string replaceable;
+	std::string replacing;
 public:
-	void announcement( void );
-	Zombie(std::string newName, std::string newType);
-	~Zombie( void );
-	void setType( void );
+	File(std::string newReplaceable, std::string newReplacing);
+	~File();
+	void WriteToFile(std::ifstream &file, std::ofstream &newFile);
+	bool FileForWrite(std::string fileName);
+	bool CheckFileExist(std::string fileName);
+	bool IsRewritingFile();
 };
 
 #endif

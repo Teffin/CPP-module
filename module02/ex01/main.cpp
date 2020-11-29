@@ -5,23 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hharrold <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/22 12:15:58 by hharrold          #+#    #+#             */
-/*   Updated: 2020/11/22 12:16:02 by hharrold         ###   ########.fr       */
+/*   Created: 2020/11/29 15:51:38 by hharrold          #+#    #+#             */
+/*   Updated: 2020/11/29 15:51:39 by hharrold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
 int main( void ) {
-
-	ZombieHorde *z1 = new ZombieHorde(-1);
-	delete z1;
-	ZombieHorde *z2 = new ZombieHorde(0);
-	delete z2;
-	ZombieHorde *z3 = new ZombieHorde(1);
-	delete z3;
-	ZombieHorde *z4 = new ZombieHorde(10);
-	z4->announce();
-	delete z4;
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+	a = Fixed( 1234.4321f );
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	return 0;
 }

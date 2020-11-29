@@ -10,14 +10,13 @@ MKDIR_P = mkdir -p
 
 CFLAGS = -I$(IDIR) -Wall -Wextra -Werror
 
-NAME = Zombies
+NAME = ZombiesHorde
 
 _DEPS =
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o Zombie.o ZombieEvent.o\
-
+_OBJ = main.o Zombie.o ZombieHorde.o
 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 

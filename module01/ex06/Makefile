@@ -16,7 +16,7 @@ _DEPS =
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = Brain.o Human.o main.o
+_OBJ = Weapon.o HumanA.o HumanB.o main.o
 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 

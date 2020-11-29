@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "File.class.hpp"
+#include "File.hpp"
 
 File::File(std::string newReplaceable, std::string newReplacing): replaceable(newReplaceable), replacing(newReplacing)
 {

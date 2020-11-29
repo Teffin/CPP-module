@@ -2,7 +2,7 @@ CC = clang++
 
 SRC = ./
 
-IDIR = ./includes/
+IDIR = ./
 
 ODIR = obj
 
@@ -10,7 +10,7 @@ MKDIR_P = mkdir -p
 
 CFLAGS = -I$(IDIR) -Wall -Wextra -Werror
 
-NAME = megaphone
+NAME = pony
 
 _DEPS =
 

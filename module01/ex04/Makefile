@@ -10,13 +10,13 @@ MKDIR_P = mkdir -p
 
 CFLAGS = -I$(IDIR) -Wall -Wextra -Werror
 
-NAME = ZombiesHorde
+NAME = ex04
 
 _DEPS =
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o Zombie.o ZombieHorde.o
+_OBJ = ex04.o
 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 

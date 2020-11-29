@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "File.class.hpp"
+#include "File.hpp"
 #define ERROR_FILE_MESSAGE "Couldn't open file"
 #define NEW_FILE_NAME(X) X + ".replace"
 #define DATA_IO(var_) {std::cout << "Please, input " << #var_ << ": "; std::cin >> var_;}
