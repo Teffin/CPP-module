@@ -10,7 +10,7 @@ MKDIR_P = mkdir -p
 
 CFLAGS = -I$(IDIR) -Wall -Wextra -Werror -std=c++98
 
-NAME = ClapTrap
+NAME = SuperTrap
 
 _DEPS = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp SuperTrap.hpp
 
@@ -42,6 +42,6 @@ clean:
 
 fclean: clean
 
-	rm $(NAME)
+	rm -f $(NAME)
 
-re: fclean -f all
+re: fclean all

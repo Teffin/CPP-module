@@ -31,10 +31,10 @@ protected:
 	void printEnergyRemained( void );
 	ClapTrap();
 public:
-	virtual ClapTrap( std::string newName, int hitPoints, int maxHitPoints,
+	ClapTrap( std::string newName, int hitPoints, int maxHitPoints,
 			  int energyPoints, int maxEnergyPoints,
 			  int level, int meleeAttackDamage,
-			  int rangeAttackDamage, int armorDamageReduction) const = 0;
+			  int rangeAttackDamage, int armorDamageReduction);
 	~ClapTrap( void );
 	ClapTrap(ClapTrap const & clapTrap);
 	ClapTrap & operator=(ClapTrap const & rhs);
@@ -43,6 +43,8 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void beRestoreMana(unsigned int amount);
+	void printParam();
+	void anounce() const;
 };
 
 #endif

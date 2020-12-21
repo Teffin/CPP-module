@@ -12,13 +12,17 @@
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(std::string newName): FragTrap(newName), NinjaTrap(newName) {
-	std::cout << "SuperTrap go kill All! " << std::endl;
-
+SuperTrap::SuperTrap(std::string newName): FragTrap(), NinjaTrap() {
+	name = newName;
+	level = 1;
+	std::cout << "\033[30m" << "SuperTrap go kill All! " << "\033[0m" << std::endl;
 }
 
 SuperTrap::SuperTrap(SuperTrap const & superTrap) {
-	*this = superTrap;
+	if (this != &superTrap)
+	{
+		*this = superTrap;
+	}
 	std::cout << "SuperTrap was cloned! " << std::endl;
 	return;
 }

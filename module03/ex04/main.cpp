@@ -13,6 +13,8 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
+
 int main( void ) {
 
 	FragTrap *FR4GTP;
@@ -59,8 +61,18 @@ int main( void ) {
 	NinjaTP->ninjaShoebox(*NinjaTP);
 	NinjaTP->ninjaShoebox(*SC4VTP);
 	NinjaTP->ninjaShoebox(*FR4GTP);
+
+	SuperTrap *SuperTP;
+	SuperTP = new SuperTrap("SuperTrap");
+	SuperTP->meleeAttack("asdas");
+	SuperTP->rangedAttack("1111");
+	SuperTP->printParam();
+	SuperTP->ninjaShoebox(*SC4VTP);
+	SuperTP->vaulthunter_dot_exe("KEker");
+
 	delete FR4GTP;
 	delete SC4VTP;
 	delete NinjaTP;
+	delete SuperTP;
 	return 0;
 }

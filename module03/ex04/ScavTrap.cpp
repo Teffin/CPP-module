@@ -26,7 +26,10 @@ ScavTrap::ScavTrap(std::string newName):
 }
 
 ScavTrap::ScavTrap(ScavTrap const & scavTrap) {
-	*this = scavTrap;
+	if (this != &scavTrap)
+	{
+		*this = scavTrap;
+	}
 	std::cout << "Protect was cloned! My level is " << level << std::endl;
 	return;
 }

@@ -19,13 +19,15 @@
 # include <time.h>
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : public virtual ClapTrap {
 private:
 	void tripleclocked(std::string const & target);
 	void surprisedStabilize(std::string const & target);
 	void deathMachine(std::string const & target);
-	FragTrap();
+	void boostTripleclocked(std::string const & target);
+	void boostRangedAttack(std::string const & target);
 public:
+	FragTrap();
 	FragTrap(std::string newName);
 	FragTrap(FragTrap const & fragTrap);
 	FragTrap & operator=(FragTrap const & rhs);

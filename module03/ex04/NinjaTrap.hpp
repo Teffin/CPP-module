@@ -18,10 +18,10 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class NinjaTrap: public ClapTrap {
+class NinjaTrap: public virtual ClapTrap {
 private:
-	NinjaTrap();
 public:
+	NinjaTrap();
 	NinjaTrap(std::string newName);
 	NinjaTrap(NinjaTrap const & ninjaTrap);
 	NinjaTrap & operator=(NinjaTrap const & rhs);

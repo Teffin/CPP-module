@@ -21,12 +21,10 @@
 
 class SuperTrap : public FragTrap, public NinjaTrap {
 public:
-	SuperTrap(std::string newName) const = 0;
+	SuperTrap(std::string newName);
 	SuperTrap(SuperTrap const & superTrap);
 	SuperTrap & operator=(SuperTrap const & rhs);
-	//SuperTrap(std::string newName, int a) const = 0 ;
 	~SuperTrap();
-	void getName() const = 0;
 };
 
 

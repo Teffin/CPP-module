@@ -13,7 +13,10 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
-	return;
+	hitPoints = 100;
+	maxHitPoints = 100;
+	rangeAttackDamage = 20;
+	armorDamageReduction = 5;
 }
 
 FragTrap::FragTrap(std::string newName):
@@ -27,12 +30,14 @@ FragTrap::FragTrap(std::string newName):
 }
 
 FragTrap::FragTrap(FragTrap const & fragTrap) {
-	*this = fragTrap;
+	if (this != &fragTrap)
+	{
+		*this = fragTrap;
+	}
 	std::cout << "Look at me! I'm cloned ! I'm CLONED!!! My level is " << level << std::endl;
 	return;
 }
 FragTrap & FragTrap::operator=(FragTrap const & rhs) {
-	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->maxHitPoints = rhs.maxHitPoints;
@@ -42,6 +47,7 @@ FragTrap & FragTrap::operator=(FragTrap const & rhs) {
 	this->meleeAttackDamage = rhs.meleeAttackDamage;
 	this->rangeAttackDamage = rhs.rangeAttackDamage;
 	this->armorDamageReduction = rhs.armorDamageReduction;
+	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	return *this;
 }
 
@@ -68,10 +74,20 @@ void FragTrap::tripleclocked(std::string const & target) {
 	std::cout<< "> at tripleclocked your attack x3!!!!!! <" << meleeAttackDamage * 3 << "> points of damage!" << std::endl;
 }
 
+void FragTrap::boostRangedAttack(std::string const & target) {
+	printAttack(target);
+	std::cout<< "> at tripleclocked your attack x3!!!!!! <" << meleeAttackDamage * 3 << "> points of damage!" << std::endl;
+}
+
+void FragTrap::boostTripleclocked(std::string const & target) {
+	printAttack(target);
+	std::cout<< "> at tripleclocked your attack x3!!!!!! <" << meleeAttackDamage * 3 << "> points of damage!" << std::endl;
+}
+
 void FragTrap::vaulthunter_dot_exe(std::string const & target) {
 	skills cmd[] = {
-			&FragTrap::rangedAttack,
-			&FragTrap::meleeAttack,
+			&FragTrap::boostRangedAttack,
+			&FragTrap::boostTripleclocked,
 			&FragTrap::deathMachine,
 			&FragTrap::surprisedStabilize,
 			&FragTrap::tripleclocked
