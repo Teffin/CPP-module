@@ -8,11 +8,11 @@ ODIR = obj
 
 MKDIR_P = mkdir -p
 
-CFLAGS = -I$(IDIR) -Wall -Wextra -Werror
+CFLAGS = -I$(IDIR) -Wall -Wextra -Werror -std=c++98
 
 NAME = fixed
 
-_DEPS =
+_DEPS = Fixed.hpp
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
@@ -42,6 +42,6 @@ clean:
 
 fclean: clean
 
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all

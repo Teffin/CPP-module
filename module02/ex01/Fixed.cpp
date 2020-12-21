@@ -17,7 +17,7 @@ Fixed::Fixed( void ):fixedPointValue(0) {
 	return;
 }
 
-Fixed::Fixed(const int & value): fixedPointValue(numberFractionalBits << value) {
+Fixed::Fixed(const int & value): fixedPointValue(value << numberFractionalBits) {
 	std::cout << "Int constructor called" << std::endl;
 	return;
 }
@@ -56,7 +56,6 @@ void Fixed::setRawBits(const int raw) {
 }
 
 int Fixed::toInt( void ) const {
-
 	return fixedPointValue >> numberFractionalBits;
 }
 
