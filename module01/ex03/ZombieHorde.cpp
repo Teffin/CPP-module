@@ -15,6 +15,7 @@
 ZombieHorde::ZombieHorde(int newCountOfZombies):countOfZombies(newCountOfZombies) {
 
 	t_zombies *newZombie;
+	std::cout << "Zombie Horde id created. Count zombie = " << newCountOfZombies << std::endl;
 	typeZombie = std::to_string(newCountOfZombies);
 	if (countOfZombies < 0) {
 		countOfZombies = 0;
@@ -34,6 +35,8 @@ ZombieHorde::ZombieHorde(int newCountOfZombies):countOfZombies(newCountOfZombies
 
 ZombieHorde::~ZombieHorde() {
 	t_zombies *tempZombie;
+	std::cout << "The die command for " << countOfZombies << " zombies!"<< std::endl;
+
 	for (int i = 0; i < countOfZombies ; ++i) {
 		tempZombie = zombies;
 		zombies = zombies->next;
@@ -45,6 +48,8 @@ ZombieHorde::~ZombieHorde() {
 
 void ZombieHorde::announce() {
 	t_zombies *tempZombie;
+	std::cout << "By twos count off!"  << std::endl;
+
 	tempZombie = zombies;
 	for (int i = 0; i < countOfZombies ; ++i) {
 		tempZombie->zombie->announcement();

@@ -17,7 +17,7 @@
 class Fixed {
 private:
 	int fixedPointValue;
-	static const int litteral = 8;
+	static const int numberFractionalBits = 8;
 public:
 	Fixed( void );
 	~Fixed( void );
@@ -25,7 +25,6 @@ public:
 	Fixed & operator=( Fixed const & rhs);
 	int getRawBits( void ) const;
 	void setRawBits(int const raw);
-	void setLitteral(const int value);
 };
 
 #endif

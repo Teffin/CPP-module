@@ -18,11 +18,11 @@
 class Human
 {
 private:
-	Brain brain;
+	const Brain brain;
 public:
 	Human( void );
 	~Human( void );
-	Brain getBrain( void );
+	const Brain& getBrain( void );
 	std::string identify( void );
 };
 

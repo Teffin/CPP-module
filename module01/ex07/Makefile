@@ -8,11 +8,11 @@ ODIR = obj
 
 MKDIR_P = mkdir -p
 
-CFLAGS = -I$(IDIR) -Wall -Wextra -Werror
+CFLAGS = -I$(IDIR) -Wall -Wextra -Werror -std=c++98
 
 NAME = replace
 
-_DEPS =
+_DEPS = File.hpp
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 

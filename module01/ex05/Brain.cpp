@@ -13,11 +13,7 @@
 #include "Brain.hpp"
 
 
-Brain::Brain() {
-	void *pointer = this;
-	std::ostringstream oss;
-	oss << pointer;
-	point = oss.str();
+Brain::Brain( void ) {
 	return;
 }
 
@@ -25,6 +21,8 @@ Brain::~Brain( void ) {
 	return;
 }
 
-std::string		Brain::identify( void ) {
-	return point;
+std::string		Brain::identify( void ) const {
+	std::ostringstream oss;
+	oss  << "0x" << std::uppercase << std::hex << (unsigned long long int)this;
+	return oss.str();
 }

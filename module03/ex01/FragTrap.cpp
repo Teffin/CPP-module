@@ -23,12 +23,14 @@ FragTrap::FragTrap(std::string newName): name(newName),
 }
 
 FragTrap::FragTrap(FragTrap const & fragTrap) {
-	*this = fragTrap;
+	if (this != &fragTrap)
+	{
+		*this = fragTrap;
+	}
 	std::cout << "Look at me! I'm cloned ! I'm CLONED!!! My level is " << level << std::endl;
 	return;
 }
 FragTrap & FragTrap::operator=(FragTrap const & rhs) {
-	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->maxHitPoints = rhs.maxHitPoints;
@@ -38,6 +40,7 @@ FragTrap & FragTrap::operator=(FragTrap const & rhs) {
 	this->meleeAttackDamage = rhs.meleeAttackDamage;
 	this->rangeAttackDamage = rhs.rangeAttackDamage;
 	this->armorDamageReduction = rhs.armorDamageReduction;
+	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	return *this;
 }
 
@@ -45,6 +48,7 @@ FragTrap::~FragTrap() {
 	std::cout << "Wubwubwub..." << std::endl;
 	return;
 }
+
 void FragTrap::printEnergyRemained( void ) {
 
 	std::cout  << "!  Now your energy is "<< energyPoints << std::endl;
@@ -98,7 +102,7 @@ void FragTrap::beRepaired(unsigned int amount) {
 
 void FragTrap::beRestoreMana(unsigned int amount) {
 	int restoredMana = 0;
-	for ( ; energyPoints < maxEnergyPoints and amount > 1; --amount) {
+	for ( ; energyPoints < maxEnergyPoints and amount > 0; --amount) {
 		energyPoints += 1;
 		restoredMana += 1;
 	}

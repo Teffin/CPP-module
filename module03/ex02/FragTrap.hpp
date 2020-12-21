@@ -17,36 +17,19 @@
 # include <iostream>
 # include <stdlib.h>
 # include <time.h>
+# include "ClapTrap.hpp"
 
-class FragTrap {
+class FragTrap : public ClapTrap {
 private:
-	std::string name;
-	int hitPoints;
-	int maxHitPoints;
-	int energyPoints;
-	int maxEnergyPoints;
-	int level;
-	int meleeAttackDamage;
-	int rangeAttackDamage;
-	int armorDamageReduction;
-	void printAttack(std::string const &target);
-	void printHpRemained( void );
-	void printEnergyRemained( void );
 	void tripleclocked(std::string const & target);
 	void surprisedStabilize(std::string const & target);
 	void deathMachine(std::string const & target);
-
-public:
 	FragTrap();
+public:
 	FragTrap(std::string newName);
 	FragTrap(FragTrap const & fragTrap);
 	FragTrap & operator=(FragTrap const & rhs);
 	~FragTrap();
-	void rangedAttack(std::string const & target);
-	void meleeAttack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-	void beRestoreMana(unsigned int amount);
 	void vaulthunter_dot_exe(std::string const & target);
 };
 

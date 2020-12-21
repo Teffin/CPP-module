@@ -12,7 +12,7 @@
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-
+#include "NinjaTrap.hpp"
 int main( void ) {
 
 	FragTrap *FR4GTP;
@@ -31,8 +31,8 @@ int main( void ) {
 
 	FR4GTP->vaulthunter_dot_exe("KEker");
 
-
-	delete FR4GTP;
+//TODO в конструкторе копирования добавить проверку на тот же адрес
+//TODO в перегрузке оператора= перенести строку печати вниз
 
 	ScavTrap *SC4VTP;
 	SC4VTP = new ScavTrap("SC4V-TP");
@@ -51,7 +51,16 @@ int main( void ) {
 	SC4VTP->challengeNewcomer();
 
 	SC4VTP->challengeNewcomer();
-	delete SC4VTP;
 
+
+
+	NinjaTrap *NinjaTP;
+	NinjaTP = new NinjaTrap("Ninjaras");
+	NinjaTP->ninjaShoebox(*NinjaTP);
+	NinjaTP->ninjaShoebox(*SC4VTP);
+	NinjaTP->ninjaShoebox(*FR4GTP);
+	delete FR4GTP;
+	delete SC4VTP;
+	delete NinjaTP;
 	return 0;
 }

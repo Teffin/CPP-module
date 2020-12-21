@@ -8,15 +8,15 @@ ODIR = obj
 
 MKDIR_P = mkdir -p
 
-CFLAGS = -I$(IDIR) -Wall -Wextra -Werror
+CFLAGS = -I$(IDIR) -Wall -Wextra -Werror -std=c++98
 
-NAME = FragTrap
+NAME = ScavTrap
 
-_DEPS = FragTrap.hpp
+_DEPS = FragTrap.hpp ScavTrap.hpp
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o FragTrap.o
+_OBJ = main.o FragTrap.o ScavTrap.o
 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
@@ -42,6 +42,6 @@ clean:
 
 fclean: clean
 
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all

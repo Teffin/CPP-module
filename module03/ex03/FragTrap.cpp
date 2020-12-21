@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
 FragTrap::FragTrap() {
 	return;
 }
@@ -26,12 +27,14 @@ FragTrap::FragTrap(std::string newName):
 }
 
 FragTrap::FragTrap(FragTrap const & fragTrap) {
-	*this = fragTrap;
+	if (this != &fragTrap)
+	{
+		*this = fragTrap;
+	}
 	std::cout << "Look at me! I'm cloned ! I'm CLONED!!! My level is " << level << std::endl;
 	return;
 }
 FragTrap & FragTrap::operator=(FragTrap const & rhs) {
-	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->maxHitPoints = rhs.maxHitPoints;
@@ -41,6 +44,7 @@ FragTrap & FragTrap::operator=(FragTrap const & rhs) {
 	this->meleeAttackDamage = rhs.meleeAttackDamage;
 	this->rangeAttackDamage = rhs.rangeAttackDamage;
 	this->armorDamageReduction = rhs.armorDamageReduction;
+	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	return *this;
 }
 

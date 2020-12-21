@@ -17,21 +17,25 @@ ScavTrap::ScavTrap() {
 	return;
 }
 
-ScavTrap::ScavTrap(std::string newName): name(newName),
-	hitPoints(100),maxHitPoints(100),energyPoints(50),maxEnergyPoints(50),
-	level(1),meleeAttackDamage(20),rangeAttackDamage(15),armorDamageReduction(3) {
-	std::cout << "The door of evil lair, is protected! My level is " << level << std::endl;
+ScavTrap::ScavTrap(std::string newName):
+	ClapTrap(newName, 100, 100,
+		  50, 50,
+		  1, 20, 15,
+		  3) {
+	std::cout << "\033[33m" << "The door of evil lair, is protected! My level is " << level << "\033[0m" << std::endl;
 	return;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & scavTrap) {
-	*this = scavTrap;
+	if (this != &scavTrap)
+	{
+		*this = scavTrap;
+	}
 	std::cout << "Protect was cloned! My level is " << level << std::endl;
 	return;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs) {
-	std::cout << "Protect was assignation! My level is " << level << std::endl;
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->maxHitPoints = rhs.maxHitPoints;
@@ -41,73 +45,13 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs) {
 	this->meleeAttackDamage = rhs.meleeAttackDamage;
 	this->rangeAttackDamage = rhs.rangeAttackDamage;
 	this->armorDamageReduction = rhs.armorDamageReduction;
+	std::cout << "Protect was assignation! My level is " << level << std::endl;
 	return *this;
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "Protect was ruined..." << std::endl;
+	std::cout << "\033[33m" << "Protect was ruined..." << "\033[0m" << std::endl;
 	return;
-}
-
-void ScavTrap::printEnergyRemained( void ) {
-
-	std::cout  << "!  Now your energy is "<< energyPoints << std::endl;
-}
-
-void ScavTrap::printHpRemained( void ) {
-
-	std::cout  << "! " << hitPoints << "HP remained" <<std::endl;
-}
-
-void ScavTrap::printAttack(std::string const &target) {
-
-	std::cout << name <<" <" << name << "> attacks <" << target;
-}
-
-void ScavTrap::rangedAttack(std::string const &target) {
-	printAttack(target);
-	std::cout << "> at range, causing <" << rangeAttackDamage << "> points of damage!" << std::endl;
-}
-
-void ScavTrap::meleeAttack(std::string const &target) {
-	printAttack(target);
-	std::cout<< "> at melee, causing <" << meleeAttackDamage << "> points of damage!" << std::endl;
-}
-
-void ScavTrap::takeDamage(unsigned int amount) {
-	for (int i = 0; i < armorDamageReduction; ++i) {
-		if (amount > 0)
-			--amount;
-	}
-	int takedDamage = 0;
-	for ( ; hitPoints > 0 and amount > 0; --amount) {
-		hitPoints -= 1;
-		takedDamage += 1;
-	}
-	std::cout << name <<" take damage on " << takedDamage;
-	printHpRemained();
-
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-	int repairedHeals = 0;
-
-	for ( ; hitPoints < maxHitPoints and amount > 0; --amount) {
-		hitPoints += 1;
-		repairedHeals += 1;
-	}
-	std::cout << name <<" repair on " << repairedHeals;
-	printHpRemained();
-}
-
-void ScavTrap::beRestoreMana(unsigned int amount) {
-	int restoredMana = 0;
-	for ( ; energyPoints < maxEnergyPoints and amount > 0; --amount) {
-		energyPoints += 1;
-		restoredMana += 1;
-	}
-	std::cout << name <<" restored energy on " << restoredMana;
-	printEnergyRemained();
 }
 
 void ScavTrap::bufChallenge( void ) {

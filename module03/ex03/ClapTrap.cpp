@@ -27,13 +27,15 @@ level(level),meleeAttackDamage(meleeAttackDamage),rangeAttackDamage(rangeAttackD
 }
 
 ClapTrap::ClapTrap(ClapTrap const & clapTrap) {
-	*this = clapTrap;
+	if (this != &clapTrap)
+	{
+		*this = clapTrap;
+	}
 	std::cout << "Base was cloned! " << std::endl;
 	return;
 }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs) {
-	std::cout << "Base was assignation!" << std::endl;
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->maxHitPoints = rhs.maxHitPoints;
@@ -43,6 +45,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs) {
 	this->meleeAttackDamage = rhs.meleeAttackDamage;
 	this->rangeAttackDamage = rhs.rangeAttackDamage;
 	this->armorDamageReduction = rhs.armorDamageReduction;
+	std::cout << "Base was assignation!" << std::endl;
 	return *this;
 }
 
@@ -110,4 +113,7 @@ void ClapTrap::beRestoreMana(unsigned int amount) {
 	}
 	std::cout << name << " restored energy on " << restoredMana;
 	printEnergyRemained();
+}
+void ClapTrap::anounce() const{
+	std::cout << "Kek"  << std::endl;
 }

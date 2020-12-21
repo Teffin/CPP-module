@@ -10,13 +10,13 @@ MKDIR_P = mkdir -p
 
 CFLAGS = -I$(IDIR) -Wall -Wextra -Werror -std=c++98
 
-NAME = pony
+NAME = ex01
 
-_DEPS = Pony.hpp
+_DEPS =
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o Pony.o \
+_OBJ = ex01.o \
 
 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/hharrold/project/cpp/cpp/module03/ex03/ClapTrap.hpp
+iostream
+-
+
+/Users/hharrold/project/cpp/cpp/module03/ex03/FragTrap.hpp
+iostream
+-
+stdlib.h
+-
+time.h
+-
+ClapTrap.hpp
+/Users/hharrold/project/cpp/cpp/module03/ex03/ClapTrap.hpp
+
+/Users/hharrold/project/cpp/cpp/module03/ex03/NinjaTrap.cpp
+NinjaTrap.hpp
+/Users/hharrold/project/cpp/cpp/module03/ex03/NinjaTrap.hpp
+
+/Users/hharrold/project/cpp/cpp/module03/ex03/NinjaTrap.hpp
+iostream
+-
+ClapTrap.hpp
+/Users/hharrold/project/cpp/cpp/module03/ex03/ClapTrap.hpp
+FragTrap.hpp
+/Users/hharrold/project/cpp/cpp/module03/ex03/FragTrap.hpp
+ScavTrap.hpp
+/Users/hharrold/project/cpp/cpp/module03/ex03/ScavTrap.hpp
+
+/Users/hharrold/project/cpp/cpp/module03/ex03/ScavTrap.hpp
+iostream
+-
+stdlib.h
+-
+time.h
+-
+ClapTrap.hpp
+/Users/hharrold/project/cpp/cpp/module03/ex03/ClapTrap.hpp
+

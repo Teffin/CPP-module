@@ -8,11 +8,11 @@ ODIR = obj
 
 MKDIR_P = mkdir -p
 
-CFLAGS = -I$(IDIR) -Wall -Wextra -Werror
+CFLAGS = -I$(IDIR) -Wall -Wextra -Werror -std=c++98
 
 NAME = ZombiesHorde
 
-_DEPS =
+_DEPS = Zombie.hpp ZombieHorde.hpp
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 

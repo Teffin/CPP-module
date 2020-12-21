@@ -15,20 +15,25 @@ FragTrap::FragTrap() {
 	return;
 }
 
-FragTrap::FragTrap(std::string newName): name(newName),
-	hitPoints(100),maxHitPoints(100),energyPoints(100),maxEnergyPoints(100),
-	level(1),meleeAttackDamage(30),rangeAttackDamage(20),armorDamageReduction(5) {
-	std::cout << "Look at me! I'm dancing! I'm dancing! My level is " << level << std::endl;
+FragTrap::FragTrap(std::string newName):
+	ClapTrap(newName, 100, 100,
+		  100, 100,
+		  1, 30, 20,
+		  5)
+{
+	std::cout << "\033[32m" << "Look at me! I'm dancing! I'm dancing! My level is " << level  << "\033[0m" << std::endl;
 	return;
 }
 
 FragTrap::FragTrap(FragTrap const & fragTrap) {
-	*this = fragTrap;
+	if (this != &fragTrap)
+	{
+		*this = fragTrap;
+	}
 	std::cout << "Look at me! I'm cloned ! I'm CLONED!!! My level is " << level << std::endl;
 	return;
 }
 FragTrap & FragTrap::operator=(FragTrap const & rhs) {
-	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->maxHitPoints = rhs.maxHitPoints;
@@ -38,73 +43,13 @@ FragTrap & FragTrap::operator=(FragTrap const & rhs) {
 	this->meleeAttackDamage = rhs.meleeAttackDamage;
 	this->rangeAttackDamage = rhs.rangeAttackDamage;
 	this->armorDamageReduction = rhs.armorDamageReduction;
+	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	return *this;
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "Wubwubwub..." << std::endl;
+	std::cout << "\033[32m" << "Wubwubwub..." << "\033[0m" << std::endl;
 	return;
-}
-
-void FragTrap::printEnergyRemained( void ) {
-
-	std::cout  << "!  Now your energy is "<< energyPoints << std::endl;
-}
-
-void FragTrap::printHpRemained( void ) {
-
-	std::cout  << "! " << hitPoints << "HP remained" <<std::endl;
-}
-
-void FragTrap::printAttack(std::string const &target) {
-
-	std::cout << name <<" <" << name << "> attacks <" << target;
-}
-
-void FragTrap::rangedAttack(std::string const &target) {
-	printAttack(target);
-	std::cout << "> at range, causing <" << rangeAttackDamage << "> points of damage!" << std::endl;
-}
-
-void FragTrap::meleeAttack(std::string const &target) {
-	printAttack(target);
-	std::cout<< "> at melee, causing <" << meleeAttackDamage << "> points of damage!" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount) {
-	for (int i = 0; i < armorDamageReduction; ++i) {
-		if (amount > 0)
-			--amount;
-	}
-	int takedDamage = 0;
-	for ( ; hitPoints > 0 and amount > 0; --amount) {
-		hitPoints -= 1;
-		takedDamage += 1;
-	}
-	std::cout << name <<" take damage on " << takedDamage;
-	printHpRemained();
-
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-	int repairedHeals = 0;
-
-	for ( ; hitPoints < maxHitPoints and amount > 0; --amount) {
-		hitPoints += 1;
-		repairedHeals += 1;
-	}
-	std::cout << name <<" repair on " << repairedHeals;
-	printHpRemained();
-}
-
-void FragTrap::beRestoreMana(unsigned int amount) {
-	int restoredMana = 0;
-	for ( ; energyPoints < maxEnergyPoints and amount > 0; --amount) {
-		energyPoints += 1;
-		restoredMana += 1;
-	}
-	std::cout << name <<" restored energy on " << restoredMana;
-	printEnergyRemained();
 }
 
 void FragTrap::deathMachine(std::string const & target) {

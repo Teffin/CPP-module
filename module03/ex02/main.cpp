@@ -31,7 +31,6 @@ int main( void ) {
 
 	FR4GTP->vaulthunter_dot_exe("KEker");
 
-
 	delete FR4GTP;
 
 	ScavTrap *SC4VTP;
@@ -51,6 +50,7 @@ int main( void ) {
 	SC4VTP->challengeNewcomer();
 
 	SC4VTP->challengeNewcomer();
+	delete SC4VTP;
 
 	return 0;
 }

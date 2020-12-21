@@ -8,11 +8,11 @@ ODIR = obj
 
 MKDIR_P = mkdir -p
 
-CFLAGS = -I$(IDIR) -Wall -Wextra -Werror
+CFLAGS = -I$(IDIR) -Wall -Wextra -Werror -std=c++98
 
 NAME = human
 
-_DEPS =
+_DEPS = Weapon.hpp HumanA.hpp HumanB.hpp
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 

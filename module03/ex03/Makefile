@@ -10,13 +10,13 @@ MKDIR_P = mkdir -p
 
 CFLAGS = -I$(IDIR) -Wall -Wextra -Werror -std=c++98
 
-NAME = ClapTrap
+NAME = NinjaTrap
 
-_DEPS = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp
+_DEPS = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp
 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o FragTrap.o ScavTrap.o ClapTrap.o
+_OBJ = main.o FragTrap.o ScavTrap.o ClapTrap.o NinjaTrap.o
 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
@@ -42,6 +42,6 @@ clean:
 
 fclean: clean
 
-	rm $(NAME)
+	rm -f $(NAME)
 
-re: fclean -f all
+re: fclean all

@@ -43,6 +43,7 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void beRestoreMana(unsigned int amount);
+	void anounce() const;
 };
 
 #endif

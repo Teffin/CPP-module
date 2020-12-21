@@ -12,7 +12,7 @@
 
 #include "Human.hpp"
 
-Human::Human() {
+Human::Human():brain() {
 	return;
 }
 
@@ -20,10 +20,10 @@ Human::~Human() {
 	return;
 }
 
-Brain Human::getBrain() {
+const Brain& Human::getBrain() {
 	return brain;
 }
 
-std::string Human::identify() {
+std::string Human::identify( void ) {
 	return brain.identify();
 }

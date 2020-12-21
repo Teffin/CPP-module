@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/hharrold/project/cpp/cpp/module03/ex00/FragTrap.cpp
+FragTrap.hpp
+/Users/hharrold/project/cpp/cpp/module03/ex00/FragTrap.hpp
+
+/Users/hharrold/project/cpp/cpp/module03/ex00/FragTrap.hpp
+iostream
+-
+stdlib.h
+-
+time.h
+-
+
+/Users/hharrold/project/cpp/cpp/module03/ex00/main.cpp
+FragTrap.hpp
+/Users/hharrold/project/cpp/cpp/module03/ex00/FragTrap.hpp
+

@@ -12,9 +12,7 @@
 
 #include "ScavTrap.hpp"
 
-
 ScavTrap::ScavTrap() {
-	ScavTrap(DEFAULT_NAME);
 	return;
 }
 
@@ -28,13 +26,15 @@ ScavTrap::ScavTrap(std::string newName):
 }
 
 ScavTrap::ScavTrap(ScavTrap const & scavTrap) {
-	*this = scavTrap;
+	if (this != &scavTrap)
+	{
+		*this = scavTrap;
+	}
 	std::cout << "Protect was cloned! My level is " << level << std::endl;
 	return;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs) {
-	std::cout << "Protect was assignation! My level is " << level << std::endl;
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
 	this->maxHitPoints = rhs.maxHitPoints;
@@ -44,6 +44,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs) {
 	this->meleeAttackDamage = rhs.meleeAttackDamage;
 	this->rangeAttackDamage = rhs.rangeAttackDamage;
 	this->armorDamageReduction = rhs.armorDamageReduction;
+	std::cout << "Protect was assignation! My level is " << level << std::endl;
 	return *this;
 }
 

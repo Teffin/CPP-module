@@ -59,28 +59,32 @@ bool File::FileForWrite(std::string fileName) {
 		{
 			return false;
 		}
-
 	}
 	return true;
 }
 
 void File::WriteToFile(std::ifstream &file, std::ofstream &newFile) {
+
+	std::string newLine;
+
 	while ((newFile.is_open()))
 	{
 		std::string::size_type n = 0;
 		std::string tempLine;
 		if (!getline(file, tempLine))
 		{
+			newLine.pop_back();
 			file.close();
 			break;
 		}
+		tempLine.push_back('\n');
 		while ((n = tempLine.find( replaceable, n)) != std::string::npos )
 		{
 			tempLine.replace( n, replaceable.size(), replacing );
 			n += replacing.size();
 		}
-		tempLine.push_back('\n');
-		newFile << tempLine;
+		newLine += tempLine;
 	}
+	newFile << newLine;
 }
 

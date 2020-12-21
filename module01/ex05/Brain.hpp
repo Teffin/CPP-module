@@ -14,8 +14,8 @@
 # define BRAIN_HPP
 
 # include <iostream>
-#include <sstream>
-#include <string>
+# include <sstream>
+# include <string>
 
 class Brain
 {
@@ -24,7 +24,7 @@ private:
 public:
 	Brain();
 	~Brain( void );
-	std::string		identify( void );
+	std::string		identify( void ) const;
 };
 
 #endif

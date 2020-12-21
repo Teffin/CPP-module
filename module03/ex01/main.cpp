@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void ) {
 
@@ -32,5 +33,24 @@ int main( void ) {
 
 
 	delete FR4GTP;
+
+	ScavTrap *SC4VTP;
+	SC4VTP = new ScavTrap("SC4V-TP");
+	SC4VTP->rangedAttack("Kerker");
+	SC4VTP->meleeAttack("Kerker");
+
+	SC4VTP->takeDamage(100);
+	SC4VTP->beRepaired(94);
+	SC4VTP->challengeNewcomer();
+	SC4VTP->challengeNewcomer();
+	SC4VTP->beRestoreMana(50);
+
+	SC4VTP->challengeNewcomer();
+	SC4VTP->challengeNewcomer();
+	SC4VTP->beRestoreMana(50);
+	SC4VTP->challengeNewcomer();
+
+	SC4VTP->challengeNewcomer();
+
 	return 0;
 }
