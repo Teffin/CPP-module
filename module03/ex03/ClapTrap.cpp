@@ -27,24 +27,23 @@ level(level),meleeAttackDamage(meleeAttackDamage),rangeAttackDamage(rangeAttackD
 }
 
 ClapTrap::ClapTrap(ClapTrap const & clapTrap) {
-	if (this != &clapTrap)
-	{
-		*this = clapTrap;
-	}
+	*this = clapTrap;
 	std::cout << "Base was cloned! " << std::endl;
 	return;
 }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs) {
-	this->name = rhs.name;
-	this->hitPoints = rhs.hitPoints;
-	this->maxHitPoints = rhs.maxHitPoints;
-	this->energyPoints = rhs.energyPoints;
-	this->maxEnergyPoints = rhs.maxEnergyPoints;
-	this->level = rhs.level;
-	this->meleeAttackDamage = rhs.meleeAttackDamage;
-	this->rangeAttackDamage = rhs.rangeAttackDamage;
-	this->armorDamageReduction = rhs.armorDamageReduction;
+	if (this != &rhs) {
+		this->name = rhs.name;
+		this->hitPoints = rhs.hitPoints;
+		this->maxHitPoints = rhs.maxHitPoints;
+		this->energyPoints = rhs.energyPoints;
+		this->maxEnergyPoints = rhs.maxEnergyPoints;
+		this->level = rhs.level;
+		this->meleeAttackDamage = rhs.meleeAttackDamage;
+		this->rangeAttackDamage = rhs.rangeAttackDamage;
+		this->armorDamageReduction = rhs.armorDamageReduction;
+	}
 	std::cout << "Base was assignation!" << std::endl;
 	return *this;
 }

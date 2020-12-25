@@ -11,14 +11,24 @@
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
+#include "Victim.hpp"
+#include "Peon.hpp"
 #include <iostream>
 
 int main() {
-	Sorcerer *sorcerer = new Sorcerer("Kek","Turec");
-	std::cout << std::endl;
-	std::cout << sorcerer;
-	std::cout << std::endl;
+	Sorcerer robert("Robert", "the Magnificent");
 
-	delete sorcerer;
+	Victim jim("Jimmy");
+	Peon joe("Joe");
+	std::cout << robert << jim << joe;
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+	Sorcerer *rob(&robert);
+	Victim *ji(&jim);
+	Peon *jo(&joe);
+	std::cout << *rob << *ji << *jo;
+	rob->polymorph(*ji);
+	rob->polymorph(*jo);
+	//TODO переделать блять все классы в модуле 03 04
 	return 0;
 }

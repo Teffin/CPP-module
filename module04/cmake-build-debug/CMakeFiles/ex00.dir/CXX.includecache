@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/hharrold/project/cpp/cpp/module04/ex00/Peon.hpp
+Victim.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex00/Victim.hpp
+iostream
+-
+
+/Users/hharrold/project/cpp/cpp/module04/ex00/Sorcerer.cpp
+Sorcerer.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex00/Sorcerer.hpp
+
+/Users/hharrold/project/cpp/cpp/module04/ex00/Sorcerer.hpp
+iostream
+-
+string
+-
+Victim.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex00/Victim.hpp
+
+/Users/hharrold/project/cpp/cpp/module04/ex00/Victim.hpp
+iostream
+-
+
+/Users/hharrold/project/cpp/cpp/module04/ex00/main.cpp
+Sorcerer.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex00/Sorcerer.hpp
+Victim.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex00/Victim.hpp
+Peon.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex00/Peon.hpp
+iostream
+-
+

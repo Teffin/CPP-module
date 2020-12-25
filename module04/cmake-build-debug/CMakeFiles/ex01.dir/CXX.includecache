@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/hharrold/project/cpp/cpp/module04/ex01/AWeapon.hpp
+iostream
+-
+string
+-
+
+/Users/hharrold/project/cpp/cpp/module04/ex01/PlasmaRifle.hpp
+iostream
+-
+AWeapon.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex01/AWeapon.hpp
+
+/Users/hharrold/project/cpp/cpp/module04/ex01/main.cpp
+AWeapon.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex01/AWeapon.hpp
+PlasmaRifle.hpp
+/Users/hharrold/project/cpp/cpp/module04/ex01/PlasmaRifle.hpp
+iostream
+-
+

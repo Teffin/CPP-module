@@ -30,23 +30,22 @@ FragTrap::FragTrap(std::string newName):
 }
 
 FragTrap::FragTrap(FragTrap const & fragTrap) {
-	if (this != &fragTrap)
-	{
-		*this = fragTrap;
-	}
+	*this = fragTrap;
 	std::cout << "Look at me! I'm cloned ! I'm CLONED!!! My level is " << level << std::endl;
 	return;
 }
 FragTrap & FragTrap::operator=(FragTrap const & rhs) {
-	this->name = rhs.name;
-	this->hitPoints = rhs.hitPoints;
-	this->maxHitPoints = rhs.maxHitPoints;
-	this->energyPoints = rhs.energyPoints;
-	this->maxEnergyPoints = rhs.maxEnergyPoints;
-	this->level = rhs.level;
-	this->meleeAttackDamage = rhs.meleeAttackDamage;
-	this->rangeAttackDamage = rhs.rangeAttackDamage;
-	this->armorDamageReduction = rhs.armorDamageReduction;
+	if (this != &rhs) {
+		this->name = rhs.name;
+		this->hitPoints = rhs.hitPoints;
+		this->maxHitPoints = rhs.maxHitPoints;
+		this->energyPoints = rhs.energyPoints;
+		this->maxEnergyPoints = rhs.maxEnergyPoints;
+		this->level = rhs.level;
+		this->meleeAttackDamage = rhs.meleeAttackDamage;
+		this->rangeAttackDamage = rhs.rangeAttackDamage;
+		this->armorDamageReduction = rhs.armorDamageReduction;
+	}
 	std::cout << "Thats Fine now Assignation me!!! My level is " << level << std::endl;
 	return *this;
 }

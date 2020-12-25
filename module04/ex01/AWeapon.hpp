@@ -17,7 +17,7 @@
 
 class AWeapon {
 private:
-	std::string const &name;
+	std::string name;
 	int apcost;
 	int damage;
 	AWeapon();
@@ -26,7 +26,7 @@ public:
 	AWeapon(AWeapon const & aWeapon);
 	AWeapon & operator=(AWeapon const & rhs);
 	~AWeapon();
-	std::string & getName() const;
+	std::string const getName() const;
 	int getAPCost() const;
 	int getDamage() const;
 	virtual void attack() const = 0;

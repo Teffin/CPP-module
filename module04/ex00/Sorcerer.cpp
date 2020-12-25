@@ -12,7 +12,7 @@
 
 #include "Sorcerer.hpp"
 
-void PrinterName(std::string name, std::string title = "") {
+void Sorcerer::PrinterName(std::string name, std::string title = "") const {
 	std::cout << name;
 	if (!title.empty())
 	{
@@ -20,7 +20,7 @@ void PrinterName(std::string name, std::string title = "") {
 	}
 	std::cout << " ";
 }
-void PrinterLine(std::string line, bool withEndl = true) {
+void Sorcerer::PrinterLine(std::string line, bool withEndl = true) const {
 	std::cout << line;
 	if (withEndl)
 		std::cout << std::endl;
@@ -31,23 +31,33 @@ Sorcerer::Sorcerer(std::string newName, std::string newTitle): name(newName), ti
 	PrinterLine("is born!");
 }
 
+Sorcerer::Sorcerer(Sorcerer const & sorcerer) {
+		*this = sorcerer;
+}
+
 Sorcerer::~Sorcerer() {
 	PrinterName(this->name, this->title);
 	PrinterLine("is dead. Consequences will never be the same!");
 }
 
-void Sorcerer::Introduce() const{
-	PrinterLine("I am ", false);
-	PrinterName(this->name, this->title);
-	PrinterLine("and I like ponies!");
+Sorcerer & Sorcerer::operator=(Sorcerer const &rhs) {
+	if (this != &rhs) {
+		this->name = rhs.name;
+		this->title = rhs.title;
+	}
+	return *this;
 }
 
 std::string Sorcerer::GetName() const{
-	return name;
+	return this->name;
 }
 
 std::string Sorcerer::GetTitle() const{
 	return this->title;
+}
+
+void Sorcerer::polymorph(Victim const & victim) const{
+	victim.getPolymorphed();
 }
 
 std::ostream & operator<<(std::ostream &out, const Sorcerer & sorcerer) {

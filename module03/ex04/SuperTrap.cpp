@@ -19,24 +19,23 @@ SuperTrap::SuperTrap(std::string newName): FragTrap(), NinjaTrap() {
 }
 
 SuperTrap::SuperTrap(SuperTrap const & superTrap) {
-	if (this != &superTrap)
-	{
-		*this = superTrap;
-	}
+	*this = superTrap;
 	std::cout << "SuperTrap was cloned! " << std::endl;
 	return;
 }
 
 SuperTrap & SuperTrap::operator=(SuperTrap const & rhs) {
-	this->name = rhs.name;
-	this->hitPoints = rhs.hitPoints;
-	this->maxHitPoints = rhs.maxHitPoints;
-	this->energyPoints = rhs.energyPoints;
-	this->maxEnergyPoints = rhs.maxEnergyPoints;
-	this->level = rhs.level;
-	this->meleeAttackDamage = rhs.meleeAttackDamage;
-	this->rangeAttackDamage = rhs.rangeAttackDamage;
-	this->armorDamageReduction = rhs.armorDamageReduction;
+	if (this != &rhs) {
+		this->name = rhs.name;
+		this->hitPoints = rhs.hitPoints;
+		this->maxHitPoints = rhs.maxHitPoints;
+		this->energyPoints = rhs.energyPoints;
+		this->maxEnergyPoints = rhs.maxEnergyPoints;
+		this->level = rhs.level;
+		this->meleeAttackDamage = rhs.meleeAttackDamage;
+		this->rangeAttackDamage = rhs.rangeAttackDamage;
+		this->armorDamageReduction = rhs.armorDamageReduction;
+	}
 	std::cout << "SuperTrap was assignation!" << std::endl;
 	return *this;
 }

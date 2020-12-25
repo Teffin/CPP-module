@@ -11,9 +11,15 @@
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
+#include "PlasmaRifle.hpp"
+#include <iostream>
 
 int main() {
-	AWeapon* pr = new AWeapon("asd", 1, 1);
+	AWeapon* pr = new PlasmaRifle();
+	pr->attack();
+	std::cout << pr->getName() << std::endl;
+	std::cout << pr->getAPCost() << std::endl;
+	std::cout << pr->getDamage() << std::endl;
 	return 0;
 }
 

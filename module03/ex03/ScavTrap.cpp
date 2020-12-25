@@ -26,24 +26,23 @@ ScavTrap::ScavTrap(std::string newName):
 }
 
 ScavTrap::ScavTrap(ScavTrap const & scavTrap) {
-	if (this != &scavTrap)
-	{
-		*this = scavTrap;
-	}
+	*this = scavTrap;
 	std::cout << "Protect was cloned! My level is " << level << std::endl;
 	return;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs) {
-	this->name = rhs.name;
-	this->hitPoints = rhs.hitPoints;
-	this->maxHitPoints = rhs.maxHitPoints;
-	this->energyPoints = rhs.energyPoints;
-	this->maxEnergyPoints = rhs.maxEnergyPoints;
-	this->level = rhs.level;
-	this->meleeAttackDamage = rhs.meleeAttackDamage;
-	this->rangeAttackDamage = rhs.rangeAttackDamage;
-	this->armorDamageReduction = rhs.armorDamageReduction;
+	if (this != &rhs) {
+		this->name = rhs.name;
+		this->hitPoints = rhs.hitPoints;
+		this->maxHitPoints = rhs.maxHitPoints;
+		this->energyPoints = rhs.energyPoints;
+		this->maxEnergyPoints = rhs.maxEnergyPoints;
+		this->level = rhs.level;
+		this->meleeAttackDamage = rhs.meleeAttackDamage;
+		this->rangeAttackDamage = rhs.rangeAttackDamage;
+		this->armorDamageReduction = rhs.armorDamageReduction;
+	}
 	std::cout << "Protect was assignation! My level is " << level << std::endl;
 	return *this;
 }

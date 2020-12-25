@@ -28,24 +28,23 @@ NinjaTrap::NinjaTrap(std::string newName):
 }
 
 NinjaTrap::NinjaTrap(NinjaTrap const & ninjaTrap) {
-	if (this != &ninjaTrap)
-	{
-		*this = ninjaTrap;
-	}
+	*this = ninjaTrap;
 	std::cout << "NinjaTrap was cloned! My level is " << level << std::endl;
 	return;
 }
 
 NinjaTrap & NinjaTrap::operator=(NinjaTrap const & rhs) {
-	this->name = rhs.name;
-	this->hitPoints = rhs.hitPoints;
-	this->maxHitPoints = rhs.maxHitPoints;
-	this->energyPoints = rhs.energyPoints;
-	this->maxEnergyPoints = rhs.maxEnergyPoints;
-	this->level = rhs.level;
-	this->meleeAttackDamage = rhs.meleeAttackDamage;
-	this->rangeAttackDamage = rhs.rangeAttackDamage;
-	this->armorDamageReduction = rhs.armorDamageReduction;
+	if (this != &rhs) {
+		this->name = rhs.name;
+		this->hitPoints = rhs.hitPoints;
+		this->maxHitPoints = rhs.maxHitPoints;
+		this->energyPoints = rhs.energyPoints;
+		this->maxEnergyPoints = rhs.maxEnergyPoints;
+		this->level = rhs.level;
+		this->meleeAttackDamage = rhs.meleeAttackDamage;
+		this->rangeAttackDamage = rhs.rangeAttackDamage;
+		this->armorDamageReduction = rhs.armorDamageReduction;
+	}
 	std::cout << "NinjaTrap was assignation! My level is " << level << std::endl;
 	return *this;
 }
