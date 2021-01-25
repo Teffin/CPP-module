@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hharrold <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/18 21:14:50 by hharrold          #+#    #+#             */
-/*   Updated: 2021/01/18 21:14:51 by hharrold         ###   ########.fr       */
+/*   Created: 2021/01/19 16:22:42 by hharrold          #+#    #+#             */
+/*   Updated: 2021/01/19 16:22:44 by hharrold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+# include "ICharacter.hpp"
+# include "AMateria.hpp"
+# include <string>
+# define MATERIA_COUNT 3
 
-class Ice: public AMateria {
+class Character: public ICharacter {
 private:
+	Character();
+	std::string _name;
+	AMateria _materia[MATERIA_COUNT];
 
 public:
-	Ice();
-	~Ice();
-	Ice(Ice const & ice);
-	Ice &operator=(Ice const & rhs);
-	AMateria* clone() const;
-	void use(ICharacter& target);
+	Character(std::string newName);
+	Character(Character const & character);
+	~Character();
+	Character &operator=(Character const & rhs);
+
 };
 
 #endif

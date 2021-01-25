@@ -19,6 +19,7 @@ class AMateria
 {
 private:
 	AMateria();
+	std::string _type;
 	unsigned int _xp;
 public:
 	AMateria(std::string const & type);

@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+
 AMateria::AMateria() {}
-AMateria::AMateria(const std::string &type): _xp(0) {
+AMateria::AMateria(const std::string &newType): _type(newType), _xp(0) {
 
 }
 
@@ -30,4 +31,12 @@ AMateria &AMateria::operator=(const AMateria &rhs) {
 		this->_xp = rhs.getXP();
 	}
 	return *this;
+}
+
+std::string const &AMateria::getType() const {
+	return this->_type;
+}
+
+unsigned int AMateria::getXP() const {
+	return _xp;
 }

@@ -10,4 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Ice.hpp"
 
+Ice::Ice() {
+
+}
+
+Ice::~Ice() {
+
+}
+
+Ice::Ice(const Ice &ice) {
+	*this = ice;
+}
+
+Ice &Ice::operator=(const Ice &rhs) {
+	if (*this != rhs) {
+
+	}
+}
